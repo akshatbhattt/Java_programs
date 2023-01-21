@@ -1,0 +1,36 @@
+
+public class thread_odd_even_numbers {
+	public static void main(String[] args)
+	 {
+	 System.out.println("topic: Multithreading ");
+	 PrintOddEven num1=new PrintOddEven("even");
+	 PrintOddEven num2=new PrintOddEven("odd");
+	 num1.start();
+	 num2.start();
+	 }
+
+	}
+	class PrintOddEven extends Thread {
+	 String num;
+	 PrintOddEven(String num)
+	 {
+	 this.num = num;
+	 }
+	 public void run(){
+	 if(num.equalsIgnoreCase("even"))
+	 {
+
+	 for(int i =0;i<=500;i=i+2)
+	 {
+	 System.out.println("even"+i);
+	 }
+	 }
+	 if(num.equalsIgnoreCase("odd"))
+	 {
+	 for(int i =1;i<=5000;i=i+2)
+	 {
+	 System.out.println("odd:"+i);
+	 }
+	 }
+	 }
+}
