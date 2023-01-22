@@ -1,0 +1,46 @@
+import java.util.*;
+public class Longest_run_in_array {
+	public static void main(String[] args)
+	 {
+	 Scanner input = new Scanner(System.in);
+	 int size;
+	 System.out.println("enter the size of array:");
+	 size=input.nextInt();
+	 int arr[]=new int[size];
+	 int Arrcount[]=new int[size];
+	 if(size==0)
+	 {
+	 System.out.println("longest run is: 0");
+
+	 }
+	 else{
+	 System.out.println("Enter the array elements:");
+	 for(int i=0; i<arr.length; i++)
+	 {
+	 arr[i]=input.nextInt();
+	 Arrcount[i]=1;
+	 }
+	 int j=1;
+	 for(int i=1; i<arr.length; i++)
+	 {
+	 if(arr[i-1]==arr[i])
+	 {
+	 Arrcount[j]++;
+	 }
+	 else
+	 j++;
+
+	 }
+	 int max=Arrcount[0];
+	 for(int i=1; i<Arrcount.length; i++)
+	 {
+	 if(Arrcount[i]>max) 
+	 {
+		 max=Arrcount[i];
+		 }
+		 }
+		 System.out.println("longest run in array: " +max);
+		 input.close();
+		}
+		 }
+}
