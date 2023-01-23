@@ -1,0 +1,19 @@
+interface Speedclass{
+int speed=90;
+public void distance();
+}
+interface Distanceclass{
+int distance=100;
+}
+class Vehicle implements Speedclass, Distanceclass{
+public void distance(){
+ int distance=speed*100;
+ System.out.println("distance travelled is "+distance);
+ }
+}
+public class Multiple_inheritance {
+	public static void main(String args[]){
+		 Vehicle obj = new Vehicle();
+		 obj.distance();
+		 }
+}
