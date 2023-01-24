@@ -1,0 +1,56 @@
+import java.util.*;
+class Account
+{
+ int balance;
+ public Account() {
+ balance = 1200;
+ }
+ public synchronized void withdraw(int bal) {
+ if(bal<=balance)
+ {
+ try {
+
+ balance = balance - bal;
+System.out.println("wait request is processing...");
+ System.out.println("amount withdrawn:"+bal);
+ System.out.println("Balance remaining:::" + balance);
+ Thread.sleep(4000);
+
+ } catch (Exception ex) {
+ System.out.println("EXCEPTION OCCURED.." + ex);
+ }
+ }
+ else
+ System.out.println(" not enough balance");
+ }
+}
+class Amtthread1 implements Runnable { Scanner input = new Scanner(System.in);
+Account obj;
+public Amtthread1(Account a)
+{
+obj = a;
+}
+public void run()
+{
+int i;
+System.out.println("enter the amount to withdraw:");
+i=input.nextInt();
+obj.withdraw(i);
+
+}
+
+}
+public class Multithreading_same_account_problem {
+	public static void main(String args[]) {
+		System.out.println("topic: Synchronisation ");
+
+		Account a1 = new Account();
+		Amtthread1 c1 = new Amtthread1(a1);
+		Amtthread1 c2 = new Amtthread1(a1);
+		Thread t1 = new Thread(c1);
+		Thread t2 = new Thread(c2);
+		t1.start();
+		t2.start();
+
+		}
+}
