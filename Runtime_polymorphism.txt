@@ -1,0 +1,72 @@
+abstract class CreditCard {
+ abstract void CheckCard();
+}
+class MasterCard extends CreditCard
+{
+ String CardNumber;
+ MasterCard(String S) {
+ CardNumber = S;
+ }
+ void CheckCard()
+ {
+
+ if (CardNumber.length() == 16 && CardNumber.charAt(0)== 5 &&
+CardNumber.charAt(1)<=53||CardNumber.charAt(1)>=49)
+ {
+ System.out.println("valid ");
+ }
+ else
+ System.out.println("invalid");
+ }
+}
+class Visa extends CreditCard
+{
+
+ String CardNumber;
+ Visa(String S) {
+ CardNumber = S;
+ }
+ void CheckCard()
+ {
+ if ((CardNumber.length() == 16||CardNumber.length() ==
+13)&&CardNumber.charAt(0)==52)
+ {
+ System.out.println("valid ");
+ }
+ else
+ {
+ System.out.println("invalid");
+ }
+ }
+}
+class AmericanExpress extends CreditCard
+{
+
+ String CardNumber;
+ AmericanExpress(String S) {
+ CardNumber = S;
+ }
+ void CheckCard()
+ {
+
+ if (CardNumber.length() == 15 && CardNumber.charAt(0)== 3&&
+CardNumber.charAt(1)==54||CardNumber.charAt(1)==52)
+
+ {
+ System.out.println("valid ");
+ }
+ else
+ System.out.println(" invaild");
+ }
+}
+public class Runtime_polymorphism {
+	public static void main(String[] args) {
+		 
+		 CreditCard c1=new MasterCard("5123677834896789");
+		 CreditCard c2= new Visa("4111111111111111");
+		 CreditCard c3= new AmericanExpress("320000000000000");
+		 c1.CheckCard();
+		 c2.CheckCard();
+		 c3.CheckCard();
+		 }
+}
