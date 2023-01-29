@@ -1,0 +1,50 @@
+import java.util.*;
+class Telcall{
+long phno;
+ String sname;
+ int n;
+ float amt;
+ void compute()
+ {
+ if(n<100)
+ {
+ amt=500;
+ }
+ else if(n<200){
+ amt=500+1*(n-100);
+ }
+ else if(n<300)
+ {
+ amt=600+1.20f*(n-200);
+ }
+ else
+ {
+ amt=720+1.50f*(n-300);
+ }
+ System.out.println("amount:"+amt);
+ }
+ Telcall(String cust_name,long contact,int nocall)
+ {
+ phno =contact;
+ sname=cust_name;
+ n=nocall;
+ }
+}
+public class Monthly_phone_bill {
+	public static void main(String[] args)
+	 {
+	 Scanner input = new Scanner(System.in);
+	 String cust_name;
+	 long contact;
+	 int nocall;
+	 System.out.println("customer name:");
+	 cust_name=input.nextLine();
+	 System.out.println("contact:");
+	 contact=input.nextLong();
+	 System.out.println(" no of calls:");
+	 nocall=input.nextInt();
+	 Telcall T1=new Telcall(cust_name,contact,nocall);
+	 T1.compute();
+	input.close();
+	 }
+}
