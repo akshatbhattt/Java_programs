@@ -1,0 +1,138 @@
+import java.util.*;
+public class Survey_car_models 
+{
+	public static void main(String Args[])
+	 {
+	 int [][]arr=new int [4][4];
+	 String[]city= {"Delhi ","Mumbai ","Chennai","Kolkata"};
+	 int citychoice;
+	 int carchoice;
+	 
+	 Scanner input=new Scanner(System.in);
+
+	 do
+	 {
+	 System.out.println("enter your choice:\n1.Delhi\n2.Mumbai\n3.Chennai\n4.Kolkata\n5.to exit");
+	 citychoice=input.nextInt();
+	 switch (citychoice)
+	 {
+	 case 1:
+	 do
+	 {
+	 System.out.println("enter your choice:\n1.Maruti-k10\n2.Zen-Astelo\n3.WagonR\n4.Maruti-SX4\n5.reset\n");
+	 carchoice=input.nextInt();
+	switch (carchoice)
+	 {
+	 case 1:
+	 arr[citychoice-1][carchoice-1]++;
+	 break;
+	 case 2:
+	 arr[citychoice-1][carchoice-1]++;
+	 break;
+	 case 3:
+	 arr[citychoice-1][carchoice-1]++;
+	 break;
+	 case 4:
+	 arr[citychoice-1][carchoice-1]++;
+	 break;
+	 default:
+	 }
+	 }while(carchoice==5);
+	 break;
+	case 2:
+	 do
+	 {
+	 System.out.println("enter your choice:\n1.Maruti-k10\n2.Zen-Astelo\n3.WagonR\n4.Maruti-SX4\n5.reset city\n");
+	 carchoice=input.nextInt();
+	 switch (carchoice)
+	 {
+	 case 1:
+	arr[citychoice-1][carchoice-1]++;
+	 break;
+	case 2:
+	arr[citychoice-1][carchoice-1]++;
+	 break;
+	case 3:
+	arr[citychoice-1][carchoice-1]++;
+	 break;
+	case 4:
+	arr[citychoice-1][carchoice-1]++;
+	 break;
+	default:
+	break;
+
+	 }
+	 }while(carchoice==5);
+	 break;
+	 case 3:
+	 do
+	 {
+	 System.out.println("enter your choice:\n1.Maruti-k10\n2.ZenAstelo\n3.WagonR\n4.Maruti-SX4\n5.exit\n");
+	 carchoice=input.nextInt();
+	 switch (carchoice)
+	 {
+	 case 1:
+	 arr[citychoice-1][carchoice-1]++;
+	 break;
+	case 2:
+	arr[citychoice-1][carchoice-1]++;
+	 break;
+	case 3:
+	arr[citychoice-1][carchoice-1]++;
+	 break;
+	case 4:
+	arr[citychoice-1][carchoice-1]++; 
+	break;
+	default:
+	break;
+	 }
+	 }while(carchoice==5);
+	 break;
+	 case 4:
+	 do
+	 {
+	 System.out.println("enter your choice:\n1.Maruti-k10\n2.ZenAstelo\n3.WagonR\n4.Maruti-SX4\n5.exit\n");
+	 carchoice=input.nextInt();
+	 switch (carchoice)
+	 {
+	 case 1:
+	arr[citychoice-1][carchoice-1]++;
+	 break;
+	case 2:
+	arr[citychoice-1][carchoice-1]++;
+	 break;
+	case 3:
+	arr[citychoice-1][carchoice-1]++;
+	 break;
+	case 4:
+	arr[citychoice-1][carchoice-1]++;
+	 break;
+	default:
+	 break;
+
+	 }
+	 }while(carchoice==5);
+	 break;
+	 default:
+	 break;
+	 }
+
+	 }while(citychoice!=5);
+	 System.out.println(" Maruti-k10 Zen-Astelo WagonR MarutiSX4");
+	 for(
+	 int i = 0;i<arr.length;i++)
+	 {
+	 System.out.println("-----------------------------------------------------------------");
+	 System.out.print(city[i] + " ");
+	 for (int j = 0; j < arr[i].length; j++)
+	 {
+	 System.out.print(arr[i][j] + " "); 
+	 }
+	 System.out.println();
+
+	 } System.out.println("-----------------------------------------------------------------");
+	 input.close();
+	 }
+
+	} 
+
