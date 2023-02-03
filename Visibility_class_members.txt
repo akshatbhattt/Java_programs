@@ -1,0 +1,35 @@
+class A
+{
+ public void show()
+ {
+ System.out.println(" hi i am public method");
+ }
+ protected void print()
+ {
+ System.out.println(" hi i am protected method");
+ }
+ private void display()
+ {
+ System.out.println(" hi i am protected method i can only be accessed only with in class");
+ }
+ void test()
+ {
+ System.out.println(" hi i am defualt method");
+ }
+ void privateprint()
+ {
+ A a=new A();
+ a.display();
+ }
+}
+
+public class Visibility_class_members {
+	public static void main(String[] args)
+	 {
+	 A obj=new A();
+	 obj.show();
+	 obj.print();
+	 obj.privateprint();// since private can not be accessed outside class so it has been accessed indirectly//
+	 obj.test();
+	 }
+}
