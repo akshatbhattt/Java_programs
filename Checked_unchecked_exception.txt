@@ -1,0 +1,36 @@
+import java.io.*;
+public class Checked_uncheked_exception {
+	void a() {
+		 int x = 50 / 0;
+		 }
+		 void b() {
+		 a();
+		 }
+		 void c() {
+		 try {
+		 b();
+		 } catch (Exception e) {
+		 System.out.println(e + " unchecked exception");
+		 }
+		 }
+		 void m() throws IOException {
+		 throw new java.io.IOException("device error");
+		 }
+		 void n() throws IOException {
+		 m();
+		 }
+		 void p() {
+		 try {
+		 n();
+		 } catch (Exception e) {
+		 System.out.println(e + " checked exception");
+		 }
+		 }
+		 public static void main(String args[]) {
+			 System.out.println("topic: exeception propogation");
+			 Checked_uncheked_exception obj = new Checked_uncheked_exception();
+			 obj.p();
+			 obj.c();
+			 System.out.println("normal flow");
+			 }
+}
