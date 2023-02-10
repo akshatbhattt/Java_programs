@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Occurence_substring_in_string {
+	public static void main(String args[]){
+		 
+		 Scanner in = new Scanner(System.in);
+		 String str;
+		 String strcount;
+		 System.out.println("enter string:");
+		 str=in.nextLine();
+		 System.out.println("enter substring:");
+		 strcount=in.nextLine();
+		 int count = ( str.split(strcount).length );
+		 System.out.println("Total occurrences: " + count);
+		 in.close();
+		 }
+}
