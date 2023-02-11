@@ -1,0 +1,89 @@
+import java.util.*;
+public class Cloth_showroom {
+	public static void main(String args[])
+	 {
+	int PurchaseAmount;
+	int choice;
+	float DiscountMill=0;
+	float DiscountHandl=0;
+	float totalHandl=0;
+	float totalMill = 0;
+	 Scanner input= new Scanner(System.in);
+	float finalAmount;
+	float totalDiscount;
+
+
+	do
+	 {
+	 System.out.println("enter yout choice 1. to purchase mill cloth 2. to purchase handloom items 3. to calculate bill");
+	 choice= input.nextInt();
+	 switch(choice)
+	 {
+	 case 1:
+	 System.out.println(" enter purchase amount:");
+	 PurchaseAmount=input.nextInt();
+	 if(PurchaseAmount<=100)
+	 {
+	 DiscountMill=0;
+	 totalMill=PurchaseAmount-DiscountMill;
+	 }
+	 else if(PurchaseAmount<=200)
+	 {
+	 DiscountMill=(PurchaseAmount)*0.05f;
+	 totalMill=PurchaseAmount-DiscountMill;
+	 }
+	 else if(PurchaseAmount<=300)
+	 {
+	 DiscountMill=(PurchaseAmount)*0.075f;
+	 totalMill=PurchaseAmount-DiscountMill;
+
+	 }
+	 else
+	 {
+	 DiscountMill=(PurchaseAmount)*0.1f;
+	 totalMill=PurchaseAmount-DiscountMill; 
+	 }
+	 break;
+	 case 2:
+	 System.out.println(" enter purchase amount:");
+	 PurchaseAmount=input.nextInt();
+	 if(PurchaseAmount<=100)
+	 {
+	 DiscountHandl=(PurchaseAmount)*0.05f;
+	 totalHandl=PurchaseAmount-DiscountHandl;
+	 }
+	 else if(PurchaseAmount<=200)
+	 {
+
+	 DiscountHandl=(PurchaseAmount)*0.075f;
+	 totalHandl=PurchaseAmount-DiscountHandl;
+	 }
+	 else if(PurchaseAmount<=300)
+	 {
+	 DiscountHandl=(PurchaseAmount)*0.1f;
+	 totalHandl=PurchaseAmount-DiscountHandl;
+	 }
+	 else
+	 {
+	 DiscountHandl=(PurchaseAmount)*0.15f;
+	 totalHandl=PurchaseAmount-DiscountHandl;
+	 }
+	 break;
+
+	 }
+
+
+	 }while(choice!=3);
+	finalAmount= totalHandl+totalMill;
+	totalDiscount=DiscountHandl+DiscountMill;
+	 System.out.println("finalamount="+finalAmount);
+	 System.out.println("totalDiscount="+(float)totalDiscount);
+
+	input.close();
+
+
+	 }
+	
+
+}
+
