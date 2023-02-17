@@ -1,0 +1,33 @@
+public class Static {
+
+	public static void main(String args[])
+	 {
+	 StaticExamplee ex=new StaticExamplee(13);
+	 StaticExamplee.StaticDisplay();
+	 ex.display();
+	 }
+}
+class StaticExamplee
+{
+static String university;
+int Rollno;
+static
+ {
+ System.out.println("initialising static variable in static block");
+ university="GEHU";
+ }
+ StaticExamplee(int x)
+ {
+ Rollno=x;
+ }
+static void StaticDisplay()
+ {
+ System.out.println("it will only print static variable:\nuniversity="+university);
+ }
+
+void display()
+ {
+ System.out.println("Roll no= "+Rollno);
+
+ }
+}
